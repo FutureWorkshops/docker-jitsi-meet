@@ -31,4 +31,8 @@ clean:
 	docker-compose rm
 	docker network prune
 
+startdev:
+	cp -f env.example .env
+	docker-compose up -d
+
 .PHONY: all build tag push clean
