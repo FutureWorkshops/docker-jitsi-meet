@@ -35,6 +35,10 @@ clean:
 	docker-compose rm
 	docker network prune
 
+dev:
+	cp -f env.example .env
+	docker-compose up -d --force
+
 prepare:
 	docker pull debian:buster-slim
 	FORCE_REBUILD=1 $(MAKE)
