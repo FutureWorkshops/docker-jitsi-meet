@@ -35,8 +35,11 @@ clean:
 	docker-compose rm
 	docker network prune
 
-dev:
+configure:
 	cp -f env.example .env
+	sh gen-passwords.sh
+
+dev:
 	docker-compose up -d --force
 
 prepare:
